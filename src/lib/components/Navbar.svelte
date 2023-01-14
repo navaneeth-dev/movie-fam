@@ -5,7 +5,7 @@
 </script>
 
 <header class="bg-neutral-900 h-14 text-white">
-	<div class="container mx-auto max-w-screen-xl flex items-center h-full justify-between">
+	<div class="safe-area flex items-center h-full justify-between">
 		<a href="/" class="font-bold hover:text-neutral-200">MovieFam</a>
 		<div>
 			{#if !user}

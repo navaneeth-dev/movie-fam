@@ -8,5 +8,7 @@
 
 <div>
 	<Navbar user={data.user} />
-	<slot />
+	<div class="safe-area">
+		<slot />
+	</div>
 </div>

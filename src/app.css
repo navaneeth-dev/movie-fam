@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .safe-area {
+        @apply container mx-auto max-w-screen-xl;
+    }
+}
