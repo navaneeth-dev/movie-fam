@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
 <h1 class="text-2xl font-bold mt-4">Popular</h1>
-<div class="grid grid-cols-[repeat(auto-fit,_minmax(150px,1fr))] gap-6 mt-4">
+<div
+	class="grid grid-cols-[repeat(auto-fit,_minmax(150px,1fr))] gap-6 mt-4"
+	in:fly={{ y: 50, duration: 500 }}
+>
 	{#each data.movies as movie (movie.id)}
 		<div class="flex flex-col items-center gap-1 text-center">
 			<img
