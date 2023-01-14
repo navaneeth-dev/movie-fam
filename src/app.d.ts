@@ -1,4 +1,4 @@
-import PocketBase, { Record, Admin } from 'pocketbase';
+import type PocketBase, { Record, Admin } from 'pocketbase';
 
 declare namespace App {
 	// interface Error {}

@@ -9,7 +9,7 @@
 		<a href="/" class="font-bold hover:text-neutral-200">MovieFam</a>
 		<div>
 			{#if !user}
-				<button class="px-2 py-1 rounded bg-blue-500 hover:bg-blue-600">Login</button>
+				<a href="/login" class="px-2 py-1 rounded bg-blue-500 hover:bg-blue-600">Login</a>
 				<button class="px-2 py-1 rounded bg-white hover:bg-neutral-200 text-black">Register</button>
 			{:else}
 				<p>{user.email}</p>
