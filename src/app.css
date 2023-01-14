@@ -4,6 +4,6 @@
 
 @layer components {
     .safe-area {
-        @apply container mx-auto max-w-screen-xl;
+        @apply container mx-auto max-w-screen-xl px-4;
     }
 }
