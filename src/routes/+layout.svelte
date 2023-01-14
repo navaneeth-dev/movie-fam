@@ -1,5 +1,12 @@
-<script>
+<script lang="ts">
 	import '../app.css';
+	import Navbar from '$lib/components/Navbar.svelte';
+
+	import type { LayoutData } from './$types';
+	export let data: LayoutData;
 </script>
 
-<slot />
+<div>
+	<Navbar user={data.user} />
+	<slot />
+</div>
