@@ -26,7 +26,7 @@
 </div>
 
 <Seo
-	title={seoMovie.title}
+	title={'Home | Popular Movies'}
 	description={seoMovie.overview}
 	image={`https://image.tmdb.org/t/p/original${seoMovie.poster_path}`}
 />
