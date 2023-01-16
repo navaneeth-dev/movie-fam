@@ -27,7 +27,9 @@
 				<a href={`/movie/${movie.movie_id}`} class="font-semibold hover:text-blue-500"
 					>{movie.movie_title}</a
 				>
-				<p>Saved At: {dayjs(movie.created)}</p>
+				<time datetime={movie.created}
+					>Saved At: {dayjs(movie.created).format('DD/MM/YYYY hh:mm:ss')}</time
+				>
 			</div>
 		{/each}
 	</div>
