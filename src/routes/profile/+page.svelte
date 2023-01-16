@@ -8,7 +8,7 @@
 <div class="mt-4">
 	<h2 class="text-xl font-bold">Profile:</h2>
 	<p>{data.user?.email}</p>
-	<p>{data.user?.created}</p>
+	<p>Joint: {dayjs(data.user?.created).format('DD MMM YYYY')}</p>
 
 	<hr class="mt-2" />
 
@@ -27,8 +27,8 @@
 				<a href={`/movie/${movie.movie_id}`} class="font-semibold hover:text-blue-500"
 					>{movie.movie_title}</a
 				>
-				<time datetime={movie.created}
-					>Saved At: {dayjs(movie.created).format('DD/MM/YYYY hh:mm:ss')}</time
+				<time datetime={movie.created} class="text-sm"
+					>Saved At: {dayjs(movie.created).format('DD MMM YYYY hh:mm:ss')}</time
 				>
 			</div>
 		{/each}
