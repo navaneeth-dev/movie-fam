@@ -2,7 +2,20 @@
 	import type { Admin, Record } from 'pocketbase';
 	import 'iconify-icon';
 
+	let searchText = '';
+
 	export let user: Record | Admin | null;
+
+	const debounce = (cb: (...args: any[]) => any, delay = 1000) => {
+		let timeout: NodeJS.Timeout;
+		return (...args: any[]) => {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => cb(...args), delay);
+		};
+	};
+	const searchMovies = debounce(() => {
+		console.log(searchText);
+	});
 </script>
 
 <header class="bg-neutral-900 h-14 text-white">
@@ -12,6 +25,8 @@
 			type="text"
 			class="bg-transparent border border-neutral-700 px-2 py-1 rounded outline-none lg:min-w-[400px]"
 			placeholder="Search"
+			on:input={searchMovies}
+			bind:value={searchText}
 		/>
 		<div>
 			{#if !user}
