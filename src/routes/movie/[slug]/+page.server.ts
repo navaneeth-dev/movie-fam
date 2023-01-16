@@ -2,6 +2,7 @@ import { THE_MOVIE_DB_API_KEY } from '$env/static/private';
 import type { Movie, Trailer } from '$lib/api-types';
 import { error } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
+import { ClientResponseError } from 'pocketbase';
 
 export const load = (async ({ params, locals }) => {
 	const response = await fetch(
@@ -12,12 +13,25 @@ export const load = (async ({ params, locals }) => {
 		`https://api.themoviedb.org/3/movie/${params.slug}/videos?api_key=${THE_MOVIE_DB_API_KEY}`
 	);
 	const trailers: Trailer = (await trailerResponse.json()).results;
-	// const saved = await locals.pb.collection('saves').getFirstListItem(`movie_id=${movie.id}`);
-	const saved = false;
+	try {
+		await locals.pb.collection('saves').getFirstListItem(`movie_id="${movie.id}"`);
+		return {
+			movie,
+			trailers,
+			saved: true
+		};
+	} catch (err) {
+		if (err instanceof ClientResponseError) {
+			console.log(err.message);
+		} else {
+			console.log('Unknown error', err);
+		}
+	}
+
 	return {
 		movie,
 		trailers,
-		saved
+		saved: false
 	};
 }) satisfies PageServerLoad;
 
