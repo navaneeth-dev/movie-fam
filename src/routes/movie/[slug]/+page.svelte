@@ -4,6 +4,7 @@
 	import 'iconify-icon';
 	import { enhance } from '$app/forms';
 	import { fly } from 'svelte/transition';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
 <div class="mt-4 flex flex-col md:flex-row gap-2" in:fly={{ y: 50, duration: 500 }}>
@@ -40,3 +41,9 @@
 		{/if}
 	</form>
 </div>
+
+<Seo
+	title={data.movie.title}
+	description={data.movie.overview}
+	image={`https://image.tmdb.org/t/p/original${data.movie.poster_path}`}
+/>
