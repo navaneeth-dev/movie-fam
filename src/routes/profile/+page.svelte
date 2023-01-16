@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import type { PageData } from './$types';
 	export let data: PageData;
+	import dayjs from 'dayjs';
 </script>
 
 <div class="mt-4">
@@ -26,6 +27,7 @@
 				<a href={`/movie/${movie.movie_id}`} class="font-semibold hover:text-blue-500"
 					>{movie.movie_title}</a
 				>
+				<p>Saved At: {dayjs(movie.created)}</p>
 			</div>
 		{/each}
 	</div>

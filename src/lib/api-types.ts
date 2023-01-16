@@ -31,6 +31,8 @@ export interface Trailer {
 
 export interface MovieSaves {
 	id: string;
+	created: string;
+	updated: string;
 	movie_id: string;
 	movie_title: string;
 	movie_overview: string;

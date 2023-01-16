@@ -4,6 +4,9 @@
 
 	import type { LayoutData } from './$types';
 	export let data: LayoutData;
+	import dayjs from 'dayjs';
+	import timezone from 'dayjs/plugin/timezone';
+	dayjs.extend(timezone);
 </script>
 
 <div>
