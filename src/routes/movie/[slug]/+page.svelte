@@ -3,9 +3,10 @@
 	export let data: PageData;
 	import 'iconify-icon';
 	import { enhance } from '$app/forms';
+	import { fly } from 'svelte/transition';
 </script>
 
-<div class="mt-4 flex flex-col md:flex-row gap-2">
+<div class="mt-4 flex flex-col md:flex-row gap-2" in:fly={{ y: 50, duration: 500 }}>
 	<div>
 		<img
 			src={`https://image.tmdb.org/t/p/original${data.movie.poster_path}`}
