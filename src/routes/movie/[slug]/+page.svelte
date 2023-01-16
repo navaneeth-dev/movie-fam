@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 	import 'iconify-icon';
+	import { enhance } from '$app/forms';
 </script>
 
 <div class="mt-4 flex flex-col md:flex-row gap-2">
@@ -12,7 +13,7 @@
 			class="rounded-lg aspect-[2/3] max-h-[700px] object-cover"
 		/>
 	</div>
-	<form class="flex-1" method="post">
+	<form class="flex-1" method="post" use:enhance>
 		<input type="hidden" name="movie_id" value={data.movie.id} />
 		<input type="hidden" name="movie_title" value={data.movie.title} />
 		<input type="hidden" name="movie_overview" value={data.movie.overview} />
