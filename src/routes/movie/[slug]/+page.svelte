@@ -23,12 +23,20 @@
 		<h2 class="text-2xl font-bold">{data.movie.title}</h2>
 		<p class="text-neutral-700 text-sm mt-2">{data.movie.release_date}</p>
 		<p class="leading-6 mt-4">{data.movie.overview}</p>
-		<button
-			class="px-2 py-1 rounded bg-blue-500 hover:bg-blue-600 text-white mt-4 flex items-center gap-1 disabled:bg-blue-200 disabled:cursor-not-allowed"
-			disabled={data.saved}
-		>
-			<span>Save</span>
-			<iconify-icon icon="material-symbols:bookmark" />
-		</button>
+		{#if data.user}
+			<button
+				class="px-2 py-1 rounded bg-blue-500 hover:bg-blue-600 text-white mt-4 flex items-center gap-1 disabled:bg-blue-200 disabled:cursor-not-allowed"
+				disabled={data.saved}
+			>
+				<span>Save</span>
+				<iconify-icon icon="material-symbols:bookmark" />
+			</button>
+		{:else}
+			<a
+				href="/login"
+				class="inline-block select-none px-2 py-1 rounded bg-blue-500 hover:bg-blue-600 text-white mt-4 disabled:bg-blue-200 disabled:cursor-not-allowed"
+				>Login to save</a
+			>
+		{/if}
 	</form>
 </div>
