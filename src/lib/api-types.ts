@@ -28,3 +28,12 @@ export interface Trailer {
 	published_at: Date;
 	id: string;
 }
+
+export interface MovieSaves {
+	id: string;
+	movie_id: string;
+	movie_title: string;
+	movie_overview: string;
+	poster_path: string;
+	user_id: string;
+}
