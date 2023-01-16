@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Admin, Record } from 'pocketbase';
+	import 'iconify-icon';
 
 	export let user: Record | Admin | null;
 </script>
@@ -12,7 +13,13 @@
 				<a href="/login" class="px-2 py-1 rounded bg-blue-500 hover:bg-blue-600">Login</a>
 				<button class="px-2 py-1 rounded bg-white hover:bg-neutral-200 text-black">Register</button>
 			{:else}
-				<p>{user.email}</p>
+				<a
+					href="/profile"
+					class="px-2 py-1 rounded bg-blue-500 hover:bg-blue-600 flex items-center gap-1"
+				>
+					<iconify-icon icon="healthicons:ui-user-profile" />
+					<span>Profile</span>
+				</a>
 			{/if}
 		</div>
 	</div>
