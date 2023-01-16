@@ -3,7 +3,7 @@ import type { Movie, Trailer } from '$lib/api-types';
 import { error } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load = (async ({ params }) => {
+export const load = (async ({ params, locals }) => {
 	const response = await fetch(
 		`https://api.themoviedb.org/3/movie/${params.slug}?api_key=${THE_MOVIE_DB_API_KEY}`
 	);
@@ -12,9 +12,12 @@ export const load = (async ({ params }) => {
 		`https://api.themoviedb.org/3/movie/${params.slug}/videos?api_key=${THE_MOVIE_DB_API_KEY}`
 	);
 	const trailers: Trailer = (await trailerResponse.json()).results;
+	// const saved = await locals.pb.collection('saves').getFirstListItem(`movie_id=${movie.id}`);
+	const saved = false;
 	return {
 		movie,
-		trailers
+		trailers,
+		saved
 	};
 }) satisfies PageServerLoad;
 
