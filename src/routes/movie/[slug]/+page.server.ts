@@ -4,11 +4,11 @@ import type { PageServerLoad } from './$types';
 
 export const load = (async ({ params }) => {
 	const response = await fetch(
-		`https://api.themoviedb.org/3/movie/${params.id}?api_key=${THE_MOVIE_DB_API_KEY}`
+		`https://api.themoviedb.org/3/movie/${params.slug}?api_key=${THE_MOVIE_DB_API_KEY}`
 	);
 	const movie: Movie = await response.json();
 	const trailerResponse = await fetch(
-		`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${THE_MOVIE_DB_API_KEY}`
+		`https://api.themoviedb.org/3/movie/${params.slug}/videos?api_key=${THE_MOVIE_DB_API_KEY}`
 	);
 	const trailers: Trailer = (await trailerResponse.json()).results;
 	return {

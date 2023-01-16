@@ -14,6 +14,6 @@
 	<div class="flex-1">
 		<h2 class="text-2xl font-bold mt-4">{data.movie.title}</h2>
 		<p class="text-neutral-700 text-sm mt-2">{data.movie.release_date}</p>
-		<p class="leading-4 mt-4">{data.movie.overview}</p>
+		<p class="leading-6 mt-4">{data.movie.overview}</p>
 	</div>
 </div>
