@@ -1,8 +1,10 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import { fly } from 'svelte/transition';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	let seoMovie = data.movies[0];
 </script>
 
 <h1 class="text-2xl font-bold mt-4">Popular</h1>
@@ -22,3 +24,9 @@
 		</div>
 	{/each}
 </div>
+
+<Seo
+	title={seoMovie.title}
+	description={seoMovie.overview}
+	image={`https://image.tmdb.org/t/p/original${seoMovie.poster_path}`}
+/>
