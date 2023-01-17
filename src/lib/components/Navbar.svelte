@@ -9,7 +9,7 @@
 	export let user: Record | Admin | null;
 
 	const debounce = (cb: (...args: any[]) => any, delay = 1000) => {
-		let timeout: NodeJS.Timeout;
+		let timeout: ReturnType<typeof setTimeout>;
 		return (...args: any[]) => {
 			clearTimeout(timeout);
 			timeout = setTimeout(() => cb(...args), delay);
