@@ -45,7 +45,7 @@
 							<span class="font-bold">
 								{movie.title}
 							</span>
-							<span class="text-sm text-neutral-200">{movie.release_date ? movie.release_date.substring(0, 4) : movie.release_date}</span>
+							<span class="text-sm text-neutral-200">{movie.release_date ? movie.release_date.substring(0, 4) : 'N/A'}</span>
 						</a>
 					</li>
 				{/each}
