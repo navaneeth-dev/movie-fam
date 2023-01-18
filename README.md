@@ -1,8 +1,8 @@
 <p align="center">https://movie-fam.vercel.app/</p>
 
-![Hero Image](https://raw.githubusercontent.com/navaneeth-dev/movie-fam/main/static/movie-fam.png?token=GHSAT0AAAAAAB3GTJT5RPJUONO2LWC5OXJAY6GKVDQ)
+![Hero Image](https://i.imgur.com/X1qF9t0.png)
 
-Your movie fam.
+Keeps track of movies you've watched and allows you to search for any movie.
 
 ## Features
 
